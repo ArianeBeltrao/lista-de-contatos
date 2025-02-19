@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Primitive } from "radix-vue";
 import { buttonVariants } from ".";
 
+/* @vue-ignore */
 interface Props extends PrimitiveProps {
   variant?: ButtonVariants["variant"];
   size?: ButtonVariants["size"];

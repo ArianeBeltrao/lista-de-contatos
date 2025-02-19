@@ -15,11 +15,12 @@ const emit = defineEmits(["toggle-sidebar"]);
     >
       <i class="pi pi-bars text-sky-200" style="font-size: 1.5rem"></i>
     </button>
-    <div class="flex justify-center gap-4 items-center">
+
+    <NuxtLink class="flex justify-center gap-4 items-center" to="/">
       <i class="pi pi-user text-sky-200" style="font-size: 2.5rem"></i>
       <h1 class="hidden sm:flex font-[Comfortaa] text-3xl text-sky-200">
         agenda
       </h1>
-    </div>
+    </NuxtLink>
   </header>
 </template>

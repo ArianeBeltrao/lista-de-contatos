@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
 const menuItems = [
-  { name: "Contatos", path: "/contacts" },
+  { name: "Contatos", path: "/contatos" },
   { name: "Meu Cadastro", path: "/meu-cadastro" },
   { name: "Usuários", path: "/usuarios" },
   { name: "Pessoas", path: "/pessoas" },
@@ -16,17 +20,18 @@ const menuItems = [
         v-for="item in menuItems"
         :key="item.path"
         :to="item.path"
-        class="px-4 py-2 text-white flex w-full hover:bg-sky-200 hover:text-stone-700 active:bg-blue-200 rounded-[48px] cursor-pointer"
+        class="px-4 py-2 text-white flex w-full hover:bg-sky-200 hover:text-stone-700 rounded-[48px] cursor-pointer"
+        :class="{ 'bg-blue-200 !text-stone-700': route.path === item.path }"
         >{{ item.name }}</NuxtLink
       >
     </div>
 
     <div class="flex">
-      <button
+      <Button
         class="w-full cursor-pointer bg-sky-200 text-stone-700 hover:bg-sky-300"
       >
         Log out
-      </button>
+      </Button>
     </div>
   </div>
 </template>

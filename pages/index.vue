@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Contacts from "./contacts/index.vue";
+import Contacts from "./contatos/index.vue";
 
 const showSidebar = ref(true);
 
