@@ -15,6 +15,14 @@ import { useForm } from "vee-validate";
 import { h } from "vue";
 import * as z from "zod";
 
+useHead({
+  title: "Agenda | Login",
+});
+
+definePageMeta({
+  layout: "auth",
+});
+
 const formSchema = toTypedSchema(
   z.object({
     username: z.string().min(2).max(50),
@@ -41,19 +49,17 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <div
-    class="flex flex-col bg-gray-100 rounded-2xl gap-10 w-[600px] h-[450px] p-10"
+    class="flex flex-col bg-gray-100 gap-10 rounded-2xl m-4 w-full sm:w-[600px] sm:h-[450px] py-8 px-4 sm:p-10"
   >
     <NuxtLink class="flex justify-center gap-4 items-center" to="/">
       <i class="pi pi-user text-stone-700" style="font-size: 2.5rem"></i>
-      <h1 class="hidden sm:flex font-[Comfortaa] text-3xl text-stone-700">
-        agenda
-      </h1>
+      <h1 class="flex font-[Comfortaa] text-3xl text-stone-700">agenda</h1>
     </NuxtLink>
     <form
-      class="flex flex-col justify-between h-full"
+      class="flex flex-col justify-between h-full gap-6"
       @submit.prevent="onSubmit"
     >
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col sm:gap-6">
         <FormField v-slot="{ componentField }" name="username">
           <FormItem>
             <FormLabel>Usuário</FormLabel>
