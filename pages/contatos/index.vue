@@ -11,5 +11,7 @@
         Create new contact
       </Button>
     </div>
+
+    <ContactsTable />
   </div>
 </template>
