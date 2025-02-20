@@ -60,7 +60,7 @@ import {
           <i class="pi pi-pencil" style="font-size: 1rem"></i>
         </TableCell>
         <TableCell class="text-center">
-          <i class="pi pi-trash" style="font-size: 1rem"></i>
+          <DeleteDrawer />
         </TableCell>
       </TableRow>
     </TableBody>
