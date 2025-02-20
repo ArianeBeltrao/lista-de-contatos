@@ -49,7 +49,7 @@ const onSubmit = handleSubmit((values) => {
 
 <template>
   <div
-    class="flex flex-col bg-gray-100 gap-10 rounded-2xl m-4 w-full sm:w-[600px] sm:h-[450px] py-8 px-4 sm:p-10"
+    class="flex flex-col bg-gray-100 gap-10 rounded-2xl m-4 w-full sm:w-[38rem] sm:h-[32rem] py-8 px-4 sm:p-10"
   >
     <NuxtLink class="flex justify-center gap-4 items-center" to="/">
       <i class="pi pi-user text-stone-700" style="font-size: 2.5rem"></i>
@@ -87,6 +87,10 @@ const onSubmit = handleSubmit((values) => {
             <FormMessage />
           </FormItem>
         </FormField>
+      </div>
+      <div class="flex items-center space-x-2">
+        <Checkbox id="remember" />
+        <label class="text-sm font-medium"> Lembre-me </label>
       </div>
       <Button
         type="submit"
