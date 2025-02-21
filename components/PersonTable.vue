@@ -8,7 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const users = [
+const usuarios = [
   {
     id: 1,
     nome: "Bolinha",
@@ -64,28 +64,28 @@ const users = [
       </TableRow>
     </TableHeader>
     <TableBody>
-      <TableRow v-for="(user, index) in users" :key="index">
+      <TableRow v-for="(usuario, index) in usuarios" :key="index">
         <TableCell>
           <Avatar class="bg-blue-300">
             <AvatarImage
-              :src="user.foto?.url || 'https://github.com/radix-vue.png'"
-              :alt="user.nome"
+              :src="usuario.foto?.url || 'https://github.com/radix-vue.png'"
+              :alt="usuario.nome"
             />
-            <AvatarFallback>{{ user.nome.charAt(0) }}</AvatarFallback>
+            <AvatarFallback>{{ usuario.nome.charAt(0) }}</AvatarFallback>
           </Avatar>
         </TableCell>
-        <TableCell>{{ user.nome }}</TableCell>
+        <TableCell>{{ usuario.nome }}</TableCell>
 
-        <TableCell class="text-center">{{ user.cpf }}</TableCell>
+        <TableCell class="text-center">{{ usuario.cpf }}</TableCell>
         <TableCell class="text-center">{{
-          user.endereco.logradouro
+          usuario.endereco.logradouro
         }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.numero }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.bairro }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.cidade }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.estado }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.cep }}</TableCell>
-        <TableCell class="text-center">{{ user.endereco.pais }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.numero }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.bairro }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.cidade }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.estado }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.cep }}</TableCell>
+        <TableCell class="text-center">{{ usuario.endereco.pais }}</TableCell>
 
         <TableCell class="text-center">
           <i class="pi pi-pencil" style="font-size: 1rem"></i>
