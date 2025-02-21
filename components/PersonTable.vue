@@ -91,7 +91,7 @@ const users = [
           <i class="pi pi-pencil" style="font-size: 1rem"></i>
         </TableCell>
         <TableCell class="text-center">
-          <DeleteDrawer />
+          <DeleteDrawer title="Tem certeza que deseja excluir essa pessoa" />
         </TableCell>
       </TableRow>
     </TableBody>
