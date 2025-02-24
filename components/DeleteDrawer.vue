@@ -14,18 +14,20 @@ const [UseTemplate, GridForm] = createReusableTemplate();
 const isDesktop = useMediaQuery("(min-width: 768px)");
 
 const isOpen = ref(false);
+
+defineProps({
+  title: String,
+});
 </script>
 
 <template>
   <UseTemplate>
     <div class="flex flex-col justify-between w-full items-center gap-14">
-      <h1 class="text-stone-700 text-2xl">
-        Tem certeza que deseja excluir esse contato?
-      </h1>
+      <h1 class="text-stone-700 text-2xl">{{ title }}?</h1>
       <div class="flex gap-4 w-full">
         <DrawerClose as-child>
           <Button
-            class="cursor-pointer bg-sky-200 text-stone-700 hover:bg-sky-300 w-full"
+            class="cursor-pointer border-2 border-sky-200 bg-white text-stone-700 hover:bg-sky-300 w-full"
           >
             Cancelar
           </Button>

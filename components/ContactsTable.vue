@@ -60,7 +60,7 @@ import {
           <i class="pi pi-pencil" style="font-size: 1rem"></i>
         </TableCell>
         <TableCell class="text-center">
-          <DeleteDrawer />
+          <DeleteDrawer title="Tem certeza que deseja excluir esse contato" />
         </TableCell>
       </TableRow>
     </TableBody>
