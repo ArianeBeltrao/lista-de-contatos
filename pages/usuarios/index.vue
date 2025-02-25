@@ -3,7 +3,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
-const goToEditPage = () => {
+const goToCreatePage = () => {
   router.push("/usuarios/criar-usuario");
 };
 </script>
@@ -16,7 +16,7 @@ const goToEditPage = () => {
       <h1 class="text-stone-700 text-2xl">Usuários</h1>
 
       <Button
-        @click="goToEditPage"
+        @click="goToCreatePage"
         class="cursor-pointer bg-sky-200 text-stone-700 hover:bg-sky-300"
       >
         Criar novo usuário
