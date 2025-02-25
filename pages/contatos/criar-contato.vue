@@ -11,10 +11,14 @@ import {
 import { Input } from "@/components/ui/input";
 
 useHead({
-  title: "Agenda | Editar usuário logado",
+  title: "Agenda | Criar contato",
 });
 
 const router = useRouter();
+
+const goBack = () => {
+  router.push("/contatos");
+};
 </script>
 
 <template>
@@ -22,25 +26,46 @@ const router = useRouter();
     class="px-6 py-4 flex w-full flex-1 relative z-0 bg-stone-200 flex-col rounded-2xl overflow-auto mt-3 sm:mt-0"
   >
     <div class="flex items-center mb-3 gap-3">
-      <h1 class="text-stone-700 text-2xl items-center">
-        Editar usuário logado
-      </h1>
+      <button
+        @click="goBack"
+        class="flex cursor-pointer items-center justify-center text-stone-700 hover:bg-sky-300 rounded-full h-10 w-10"
+      >
+        <i class="pi pi-angle-left cursor-pointer" style="font-size: 1rem"></i>
+      </button>
+      <h1 class="text-stone-700 text-2xl items-center">Criar novo contato</h1>
     </div>
 
     <form
       class="flex flex-col h-full w-full overflow-auto px-2 justify-between"
     >
-      <div class="flex flex-col gap-3">
-        <div class="flex sm:gap-4 flex-col sm:flex-row">
-          <FormField v-slot="{ componentField }" name="name">
+      <div class="flex gap-4 flex-col sm:gap-6">
+        <div class="flex gap-4 flex-col sm:flex-row">
+          <FormField v-slot="{ componentField }" name="tag">
             <FormItem class="w-full">
-              <FormLabel>Nome</FormLabel>
+              <FormLabel>Tag</FormLabel>
               <FormControl>
-                <Input type="text" placeholder="Nome" v-bind="componentField" />
+                <Input type="text" placeholder="Tag" v-bind="componentField" />
               </FormControl>
               <FormMessage />
             </FormItem>
           </FormField>
+
+          <FormField v-slot="{ componentField }" name="tipoContato">
+            <FormItem class="w-full">
+              <FormLabel>Tipo de contato</FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  placeholder="Tipo de contato"
+                  v-bind="componentField"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          </FormField>
+        </div>
+
+        <div class="flex gap-4 flex-col sm:flex-row">
           <FormField v-slot="{ componentField }" name="email">
             <FormItem class="w-full">
               <FormLabel>Email</FormLabel>
@@ -54,19 +79,7 @@ const router = useRouter();
               <FormMessage />
             </FormItem>
           </FormField>
-        </div>
-
-        <div class="flex sm:gap-4 flex-col sm:flex-row">
-          <FormField v-slot="{ componentField }" name="cpf">
-            <FormItem class="w-full">
-              <FormLabel>CPF</FormLabel>
-              <FormControl>
-                <Input type="text" placeholder="CPF" v-bind="componentField" />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          </FormField>
-          <FormField v-slot="{ componentField }" name="phone">
+          <FormField v-slot="{ componentField }" name="telefone">
             <FormItem class="w-full">
               <FormLabel>Telefone</FormLabel>
               <FormControl>
@@ -79,49 +92,30 @@ const router = useRouter();
               <FormMessage />
             </FormItem>
           </FormField>
-          <FormField v-slot="{ componentField }" name="date">
-            <FormItem class="w-full">
-              <FormLabel>Data de nascimento</FormLabel>
-              <FormControl>
-                <Input
-                  type="text"
-                  placeholder="Data de nascimento"
-                  v-bind="componentField"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          </FormField>
         </div>
-        <FormField v-slot="{ componentField }" name="username">
-          <FormItem>
-            <FormLabel>Usuário</FormLabel>
+
+        <FormField v-slot="{ componentField }" name="privado">
+          <FormItem class="w-full">
+            <FormLabel>Privado</FormLabel>
             <FormControl>
-              <Input
-                type="text"
-                placeholder="Usuário"
-                v-bind="componentField"
-              />
-            </FormControl>
-            <FormMessage />
-          </FormItem>
-        </FormField>
-        <FormField v-slot="{ componentField }" name="password">
-          <FormItem>
-            <FormLabel>Senha</FormLabel>
-            <FormControl>
-              <Input type="text" placeholder="Senha" v-bind="componentField" />
+              <div class="flex items-center space-x-2">
+                <Checkbox id="remember" v-bind="componentField" />
+                <label class="text-sm font-medium"> Sim </label>
+              </div>
+              <div class="flex items-center space-x-2">
+                <Checkbox id="remember" v-bind="componentField" />
+                <label class="text-sm font-medium"> Não </label>
+              </div>
             </FormControl>
             <FormMessage />
           </FormItem>
         </FormField>
       </div>
-
       <Button
         type="submit"
         class="w-full bg-sky-200 text-stone-700 hover:bg-sky-300 cursor-pointer my-4"
       >
-        Salvar alterações
+        Salvar
       </Button>
     </form>
   </div>
